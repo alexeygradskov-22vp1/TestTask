@@ -15,13 +15,13 @@ public:
             if (Figures[i]->isvisible == true) {
                 Figures[i]->show(g);
             }
-            //Figures[i]->show(g);
         }
     }
-    void pop() {
-        delete Figures[Figures.size() - 1];
-        Figures.pop_back();
-    };
+    void allvisible() {
+        for (int i = 0; i < Figures.size(); i++) {
+            Figures[i]->isvisible = true;
+        }
+    }
     void showbyid(int id) {
         Figures[id]->isvisible = true;
     }
