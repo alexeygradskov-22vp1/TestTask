@@ -59,6 +59,7 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::ComboBox^ comboBox2;
 	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Label^ label9;
 
 	protected:
 
@@ -97,6 +98,7 @@ namespace CppCLRWinFormsProject {
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
 			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// button1
@@ -298,12 +300,21 @@ namespace CppCLRWinFormsProject {
 			this->button5->UseVisualStyleBackColor = false;
 			this->button5->Click += gcnew System::EventHandler(this, &Form1::button5_Click);
 			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Location = System::Drawing::Point(52, 398);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(0, 13);
+			this->label9->TabIndex = 22;
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Control;
 			this->ClientSize = System::Drawing::Size(684, 561);
+			this->Controls->Add(this->label9);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->comboBox2);
 			this->Controls->Add(this->button4);
@@ -360,6 +371,7 @@ namespace CppCLRWinFormsProject {
 			this->label4->Text = "Y";
 			this->label5->Text = "A";
 			this->label6->Text = "";
+			this->label9->Text = "X1,X2 - лева€ и права€ координата соответственно, ј - длина основани€";
 			this->textBox1->Visible = true;
 			this->textBox2->Visible = true;
 			this->textBox3->Visible = true;
@@ -379,6 +391,7 @@ namespace CppCLRWinFormsProject {
 			this->label4->Text = "R";
 			this->label5->Text = "";
 			this->label6->Text = "";
+			this->label9->Text = "";
 			this->textBox1->Visible = true;
 			this->textBox2->Visible = true;
 			this->textBox3->Visible = true;
@@ -398,6 +411,7 @@ namespace CppCLRWinFormsProject {
 			this->label4->Text = "Y";
 			this->label5->Text = "A";
 			this->label6->Text = "R";
+			this->label9->Text = "X1,X2 - лева€ и права€ координата соответственно, ј - длина основани€, R - радиус вписанной окружности";
 			this->textBox1->Visible = true;
 			this->textBox2->Visible = true;
 			this->textBox3->Visible = true;
