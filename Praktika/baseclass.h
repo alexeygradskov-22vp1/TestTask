@@ -12,4 +12,5 @@ public:
     virtual void show(Graphics^ g) = 0;
     virtual void hide(Graphics^ g) = 0;
     virtual void replace(int newx, int newy, Graphics^ g) = 0;
+    bool isvisible = true;
 };

@@ -56,6 +56,9 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::Label^ label8;
+	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::ComboBox^ comboBox2;
+	private: System::Windows::Forms::Button^ button5;
 
 	protected:
 
@@ -91,16 +94,19 @@ namespace CppCLRWinFormsProject {
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
+			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
 			this->button1->BackColor = System::Drawing::SystemColors::Info;
-			this->button1->Location = System::Drawing::Point(89, 435);
+			this->button1->Location = System::Drawing::Point(52, 416);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(120, 31);
+			this->button1->Size = System::Drawing::Size(121, 31);
 			this->button1->TabIndex = 0;
-			this->button1->Text = L"Нарисовать";
+			this->button1->Text = L"Создать";
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
 			// 
@@ -118,7 +124,7 @@ namespace CppCLRWinFormsProject {
 			// button2
 			// 
 			this->button2->BackColor = System::Drawing::SystemColors::Info;
-			this->button2->Location = System::Drawing::Point(278, 435);
+			this->button2->Location = System::Drawing::Point(329, 466);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(120, 31);
 			this->button2->TabIndex = 2;
@@ -129,7 +135,7 @@ namespace CppCLRWinFormsProject {
 			// button3
 			// 
 			this->button3->BackColor = System::Drawing::SystemColors::Info;
-			this->button3->Location = System::Drawing::Point(479, 435);
+			this->button3->Location = System::Drawing::Point(477, 466);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(120, 31);
 			this->button3->TabIndex = 3;
@@ -179,7 +185,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			// textBox6
 			// 
-			this->textBox6->Location = System::Drawing::Point(479, 500);
+			this->textBox6->Location = System::Drawing::Point(477, 529);
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(40, 20);
 			this->textBox6->TabIndex = 9;
@@ -187,7 +193,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			// textBox7
 			// 
-			this->textBox7->Location = System::Drawing::Point(559, 500);
+			this->textBox7->Location = System::Drawing::Point(557, 529);
 			this->textBox7->Name = L"textBox7";
 			this->textBox7->Size = System::Drawing::Size(40, 20);
 			this->textBox7->TabIndex = 10;
@@ -245,7 +251,7 @@ namespace CppCLRWinFormsProject {
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(476, 484);
+			this->label7->Location = System::Drawing::Point(474, 513);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(34, 13);
 			this->label7->TabIndex = 17;
@@ -254,18 +260,53 @@ namespace CppCLRWinFormsProject {
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(556, 484);
+			this->label8->Location = System::Drawing::Point(554, 513);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(34, 13);
 			this->label8->TabIndex = 18;
 			this->label8->Text = L"newY";
 			// 
+			// button4
+			// 
+			this->button4->BackColor = System::Drawing::SystemColors::Info;
+			this->button4->Location = System::Drawing::Point(530, 362);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(119, 34);
+			this->button4->TabIndex = 19;
+			this->button4->Text = L"Очистить контейнер";
+			this->button4->UseVisualStyleBackColor = false;
+			this->button4->Click += gcnew System::EventHandler(this, &Form1::button4_Click);
+			// 
+			// comboBox2
+			// 
+			this->comboBox2->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->comboBox2->FormattingEnabled = true;
+			this->comboBox2->Location = System::Drawing::Point(328, 439);
+			this->comboBox2->Name = L"comboBox2";
+			this->comboBox2->Size = System::Drawing::Size(121, 21);
+			this->comboBox2->TabIndex = 20;
+			this->comboBox2->SelectedIndexChanged += gcnew System::EventHandler(this, &Form1::comboBox2_SelectedIndexChanged);
+			// 
+			// button5
+			// 
+			this->button5->BackColor = System::Drawing::SystemColors::Info;
+			this->button5->Location = System::Drawing::Point(200, 466);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(107, 31);
+			this->button5->TabIndex = 21;
+			this->button5->Text = L"Показать";
+			this->button5->UseVisualStyleBackColor = false;
+			this->button5->Click += gcnew System::EventHandler(this, &Form1::button5_Click);
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::SystemColors::ActiveBorder;
+			this->BackColor = System::Drawing::SystemColors::Control;
 			this->ClientSize = System::Drawing::Size(684, 561);
+			this->Controls->Add(this->button5);
+			this->Controls->Add(this->comboBox2);
+			this->Controls->Add(this->button4);
 			this->Controls->Add(this->label8);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->label6);
@@ -295,6 +336,7 @@ namespace CppCLRWinFormsProject {
 		}
 #pragma endregion
 	Contain* Figures = new Contain;
+	int id = 0;
 	private: System::Void Form1_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->textBox1->Visible = false;
 		this->textBox2->Visible = false;
@@ -303,8 +345,10 @@ namespace CppCLRWinFormsProject {
 		this->textBox5->Visible = false;
 		this->button2->Enabled = false;
 		this->button3->Enabled = false;
+		this->button4->Enabled = false;
+		this->button5->Enabled = false;
 		this->button1->Click += gcnew System::EventHandler(this, &Form1::check_figures);
-		this->button2->Click += gcnew System::EventHandler(this, &Form1::check_figures);
+		this->button4->Click += gcnew System::EventHandler(this, &Form1::check_figures);
 	}
 	private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 		switch (this->comboBox1->SelectedIndex)
@@ -388,6 +432,8 @@ namespace CppCLRWinFormsProject {
 				Triangle* t = new Triangle(x1, x2, y, a);
 				Figures->add(t);
 				t->show(g);
+				this->comboBox2->Items->Add("Фигура " + (id+1));
+				id++;
 			}
 			break;
 		}
@@ -403,6 +449,8 @@ namespace CppCLRWinFormsProject {
 				Circle* c = new Circle(x, y, r);
 				Figures->add(c);
 				c->show(g);
+				this->comboBox2->Items->Add("Фигура " + (id + 1));
+				id++;
 			}
 			break;
 		}
@@ -420,6 +468,8 @@ namespace CppCLRWinFormsProject {
 				CompFigure* cf = new CompFigure(x1, x2, y, a,r);
 				Figures->add(cf);
 				cf->show(g);
+				this->comboBox2->Items->Add("Фигура " + (id + 1));
+				id++;
 			}
 			break;
 		}
@@ -430,31 +480,57 @@ namespace CppCLRWinFormsProject {
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		Graphics^ g = this->CreateGraphics();
-		Figures->pop();
+		Figures->hidebyid(this->comboBox2->SelectedIndex);
 		g->Clear(this->BackColor);
 		Figures->showall(g);
+		this->button2->Enabled = false;
+		this->button5->Enabled = true;
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (this->textBox6->Text == "" || this->textBox7->Text == "") {
 			MessageBox::Show("Заполните координаты для перемещения", "Error", MessageBoxButtons::OK, MessageBoxIcon::Information);
 		}
+		else if (String::IsNullOrEmpty(this->comboBox2->Text)) {
+			MessageBox::Show("Выберите фигуру", "Error", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		}
 		else {
 			int newx = Convert::ToInt32(this->textBox6->Text);
 			int newy = Convert::ToInt32(this->textBox7->Text);
 			Graphics^ g = this->CreateGraphics();
-			Figures->replacelast(newx,newy,g);
+			Figures->replacebyid(newx,newy, this->comboBox2->SelectedIndex,g);
 			g->Clear(this->BackColor);
 			Figures->showall(g);
 		}
 		
+	}
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+		Graphics^ g = this->CreateGraphics();
+		Figures->clean(g);
+		id = 0;
+		this->comboBox2->Items->Clear();
+		this->button2->Enabled = false;
+		this->button5->Enabled = false;
+	}
+	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+		Graphics^ g = this->CreateGraphics();
+		Figures->showbyid(this->comboBox2->SelectedIndex);
+		g->Clear(this->BackColor);
+		Figures->showall(g);
+		this->button2->Enabled = true;
+		this->button5->Enabled = false;
+	}
+	private: System::Void comboBox2_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+		bool a = Figures->checkbyid(this->comboBox2->SelectedIndex);
+		this->button2->Enabled = a;
+		this->button5->Enabled = !a;
 	}
 	private: System::Void check_input(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
 		if (!Char::IsDigit(e->KeyChar) && e->KeyChar != 8)
 			e->Handled = true;
 	}
 	private: System::Void check_figures(System::Object^ sender, System::EventArgs^ e) {
-		this->button2->Enabled = Figures->getsize() > 0;
 		this->button3->Enabled = Figures->getsize() > 0;
+		this->button4->Enabled = Figures->getsize() > 0;
 	}
 };
 }

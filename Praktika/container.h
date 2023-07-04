@@ -12,20 +12,35 @@ public:
     };
     void showall(Graphics^ g) {
         for (int i = 0; i < Figures.size(); i++) {
-            Figures[i]->show(g);
+            if (Figures[i]->isvisible == true) {
+                Figures[i]->show(g);
+            }
+            //Figures[i]->show(g);
         }
     }
     void pop() {
         delete Figures[Figures.size() - 1];
         Figures.pop_back();
     };
-    void replacelast(int newx,int newy, Graphics^ g) {
-        Figures[Figures.size() - 1]->replace(newx, newy,g);
+    void showbyid(int id) {
+        Figures[id]->isvisible = true;
+    }
+    void hidebyid(int id) {
+        Figures[id]->isvisible = false;
+    }
+    void replacebyid(int newx,int newy,int id, Graphics^ g) {
+        Figures[id]->replace(newx, newy,g);
+    }
+    bool checkbyid(int id) {
+        return Figures[id]->isvisible;
     }
     int getsize() {
         return(Figures.size());
     }
-    void clear() {
+    void clean(Graphics^ g) {
+        for (int i = 0; i < Figures.size(); i++) {
+            Figures[i]->hide(g);
+        }
         Figures.clear();
     }
 };
