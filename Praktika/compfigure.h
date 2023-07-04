@@ -19,6 +19,7 @@ public:
     };
     void hide(Graphics^ g) override {
         t->hide(g);
+        c->hide(g);
     };
     void replace(int newx, int newy, Graphics^ g) override {
         t->replace(newx, newy, g);
