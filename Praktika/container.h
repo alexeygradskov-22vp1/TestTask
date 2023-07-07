@@ -1,7 +1,6 @@
 #pragma once
 #include <vector>
 #include "baseclass.h"
-#include "circle.h"
 
 class Contain {
 private:

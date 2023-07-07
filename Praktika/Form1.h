@@ -315,7 +315,7 @@ namespace CppCLRWinFormsProject {
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(52, 398);
+			this->label9->Location = System::Drawing::Point(10, 398);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(0, 13);
 			this->label9->TabIndex = 22;
@@ -361,9 +361,12 @@ namespace CppCLRWinFormsProject {
 			this->Controls->Add(this->HideButton);
 			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->CreateButton);
+			this->MaximumSize = System::Drawing::Size(700, 600);
+			this->MinimumSize = System::Drawing::Size(700, 600);
 			this->Name = L"Form1";
 			this->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->Text = L"Praktika";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
+			this->Text = L"Praktika_22VP2_Dankov";
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -457,65 +460,70 @@ namespace CppCLRWinFormsProject {
 	}
 	private: System::Void CreateButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		Graphics^ g = this->CreateGraphics();
-		switch (this->comboBox1->SelectedIndex)
-		{
-		case 0:
-		{
-			if (this->textBox1->Text == "" || this->textBox2->Text == "" || this->textBox3->Text == "" || this->textBox4->Text == "") {
-				MessageBox::Show("Заполните координаты", "Error", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		try {
+			switch (this->comboBox1->SelectedIndex)
+			{
+			case 0:
+			{
+				if (this->textBox1->Text == "" || this->textBox2->Text == "" || this->textBox3->Text == "" || this->textBox4->Text == "") {
+					MessageBox::Show("Заполните координаты", "Error", MessageBoxButtons::OK, MessageBoxIcon::Information);
+				}
+				else {
+					int x1 = Convert::ToInt32(this->textBox1->Text);
+					int x2 = Convert::ToInt32(this->textBox2->Text);
+					int y = Convert::ToInt32(this->textBox3->Text);
+					int a = Convert::ToInt32(this->textBox4->Text);
+					Triangle* t = new Triangle(x1, x2, y, a);
+					Figures->add(t);
+					t->show(g);
+					this->comboBox2->Items->Add("Фигура " + (id + 1));
+					id++;
+				}
+				break;
 			}
-			else {
-				int x1 = Convert::ToInt32(this->textBox1->Text);
-				int x2 = Convert::ToInt32(this->textBox2->Text);
-				int y = Convert::ToInt32(this->textBox3->Text);
-				int a = Convert::ToInt32(this->textBox4->Text);
-				Triangle* t = new Triangle(x1, x2, y, a);
-				Figures->add(t);
-				t->show(g);
-				this->comboBox2->Items->Add("Фигура " + (id+1));
-				id++;
+			case 1:
+			{
+				if (this->textBox1->Text == "" || this->textBox2->Text == "" || this->textBox3->Text == "") {
+					MessageBox::Show("Заполните координаты", "Error", MessageBoxButtons::OK, MessageBoxIcon::Information);
+				}
+				else {
+					int x = Convert::ToInt32(this->textBox1->Text);
+					int y = Convert::ToInt32(this->textBox2->Text);
+					int r = Convert::ToInt32(this->textBox3->Text);
+					Circle* c = new Circle(x, y, r);
+					Figures->add(c);
+					c->show(g);
+					this->comboBox2->Items->Add("Фигура " + (id + 1));
+					id++;
+				}
+				break;
 			}
-			break;
+			case 2:
+			{
+				if (this->textBox1->Text == "" || this->textBox2->Text == "" || this->textBox3->Text == "" || this->textBox4->Text == "" || this->textBox5->Text == "") {
+					MessageBox::Show("Заполните координаты", "Error", MessageBoxButtons::OK, MessageBoxIcon::Information);
+				}
+				else {
+					int x1 = Convert::ToInt32(this->textBox1->Text);
+					int x2 = Convert::ToInt32(this->textBox2->Text);
+					int y = Convert::ToInt32(this->textBox3->Text);
+					int a = Convert::ToInt32(this->textBox4->Text);
+					int r = Convert::ToInt32(this->textBox5->Text);
+					CompFigure* cf = new CompFigure(x1, x2, y, a, r);
+					Figures->add(cf);
+					cf->show(g);
+					this->comboBox2->Items->Add("Фигура " + (id + 1));
+					id++;
+				}
+				break;
+			}
+			default:
+				MessageBox::Show("Выберите фигуру", "Error", MessageBoxButtons::OK, MessageBoxIcon::Information);
+				break;
+			}
 		}
-		case 1:
-		{
-			if(this->textBox1->Text == "" || this->textBox2->Text == "" || this->textBox3->Text == "") {
-				MessageBox::Show("Заполните координаты", "Error", MessageBoxButtons::OK, MessageBoxIcon::Information);
-			}
-			else {
-				int x = Convert::ToInt32(this->textBox1->Text);
-				int y = Convert::ToInt32(this->textBox2->Text);
-				int r = Convert::ToInt32(this->textBox3->Text);
-				Circle* c = new Circle(x, y, r);
-				Figures->add(c);
-				c->show(g);
-				this->comboBox2->Items->Add("Фигура " + (id + 1));
-				id++;
-			}
-			break;
-		}
-		case 2:
-		{	
-			if (this->textBox1->Text == "" || this->textBox2->Text == "" || this->textBox3->Text == "" || this->textBox4->Text == "" || this->textBox5->Text == "") {
-				MessageBox::Show("Заполните координаты", "Error", MessageBoxButtons::OK, MessageBoxIcon::Information);
-			}
-			else {
-				int x1 = Convert::ToInt32(this->textBox1->Text);
-				int x2 = Convert::ToInt32(this->textBox2->Text);
-				int y = Convert::ToInt32(this->textBox3->Text);
-				int a = Convert::ToInt32(this->textBox4->Text);
-				int r = Convert::ToInt32(this->textBox5->Text);
-				CompFigure* cf = new CompFigure(x1, x2, y, a,r);
-				Figures->add(cf);
-				cf->show(g);
-				this->comboBox2->Items->Add("Фигура " + (id + 1));
-				id++;
-			}
-			break;
-		}
-		default:
-			MessageBox::Show("Выберите фигуру", "Error", MessageBoxButtons::OK, MessageBoxIcon::Information);
-			break;
+		catch (System::Exception^ err) {
+			MessageBox::Show(err->Message, "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 	}
 	private: System::Void HideButton_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -527,19 +535,24 @@ namespace CppCLRWinFormsProject {
 		this->ShowButton->Enabled = true;
 	}
 	private: System::Void ReplaceButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (this->textBox6->Text == "" || this->textBox7->Text == "") {
-			MessageBox::Show("Заполните координаты для перемещения", "Error", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		try {
+			if (this->textBox6->Text == "" || this->textBox7->Text == "") {
+				MessageBox::Show("Заполните координаты для перемещения", "Error", MessageBoxButtons::OK, MessageBoxIcon::Information);
+			}
+			else if (String::IsNullOrEmpty(this->comboBox2->Text)) {
+				MessageBox::Show("Выберите фигуру", "Error", MessageBoxButtons::OK, MessageBoxIcon::Information);
+			}
+			else {
+				int newx = Convert::ToInt32(this->textBox6->Text);
+				int newy = Convert::ToInt32(this->textBox7->Text);
+				Graphics^ g = this->CreateGraphics();
+				Figures->replacebyid(newx,newy, this->comboBox2->SelectedIndex,g);
+				g->Clear(this->BackColor);
+				Figures->showall(g);
+			}
 		}
-		else if (String::IsNullOrEmpty(this->comboBox2->Text)) {
-			MessageBox::Show("Выберите фигуру", "Error", MessageBoxButtons::OK, MessageBoxIcon::Information);
-		}
-		else {
-			int newx = Convert::ToInt32(this->textBox6->Text);
-			int newy = Convert::ToInt32(this->textBox7->Text);
-			Graphics^ g = this->CreateGraphics();
-			Figures->replacebyid(newx,newy, this->comboBox2->SelectedIndex,g);
-			g->Clear(this->BackColor);
-			Figures->showall(g);
+		catch (System::Exception^ err) {
+			MessageBox::Show(err->Message, "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 		
 	}
@@ -563,6 +576,10 @@ namespace CppCLRWinFormsProject {
 		Graphics^ g = this->CreateGraphics();
 		Figures->allvisible();
 		Figures->showall(g);
+		if (!String::IsNullOrEmpty(this->comboBox2->Text)) {
+			this->HideButton->Enabled = true;
+			this->ShowButton->Enabled = false;
+		}
 	}
 	private: System::Void comboBox2_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 		bool a = Figures->checkbyid(this->comboBox2->SelectedIndex);

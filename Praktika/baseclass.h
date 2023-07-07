@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include "exceptions.h"
 using namespace std;
 using namespace System::Windows::Forms;
 using namespace System::Drawing;
