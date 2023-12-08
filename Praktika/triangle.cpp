@@ -16,7 +16,7 @@ void Triangle::show(Graphics^ g) {
     p[0].X = x; p[0].Y = y + a / 2;
     p[1].X = x; p[1].Y = y - a / 2;
     p[2].X = x2; p[2].Y = y;
-    g->FillPolygon(Brushes::Green, p);
+    g->FillPolygon(Brushes::LawnGreen, p);
     g->DrawPolygon(Pens::Black, p);
 };
 

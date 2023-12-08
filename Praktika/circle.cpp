@@ -12,7 +12,7 @@ Circle::Circle(int x, int y, int r) : Figure(x, y), radius(r) {
 };
 
 void Circle::show(Graphics^ g) {
-    g->FillEllipse(Brushes::Gold, x - radius, y - radius, radius * 2, radius * 2);
+    g->FillEllipse(Brushes::BlueViolet, x - radius, y - radius, radius * 2, radius * 2);
     g->DrawEllipse(Pens::Black, x - radius, y - radius, radius * 2, radius * 2);
 }; 
 

@@ -64,6 +64,7 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::Label^ label8;
+	private: System::Windows::Forms::Label^ label10;
 	private: System::Windows::Forms::Button^ ClearButton;
 
 	private: System::Windows::Forms::ComboBox^ comboBox2;
@@ -106,6 +107,7 @@ namespace CppCLRWinFormsProject {
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->ClearButton = (gcnew System::Windows::Forms::Button());
 			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
 			this->ShowButton = (gcnew System::Windows::Forms::Button());
@@ -115,10 +117,11 @@ namespace CppCLRWinFormsProject {
 			// 
 			// CreateButton
 			// 
-			this->CreateButton->BackColor = System::Drawing::SystemColors::Info;
-			this->CreateButton->Location = System::Drawing::Point(52, 416);
+			this->CreateButton->BackColor = System::Drawing::Color::CornflowerBlue;
+			this->CreateButton->Location = System::Drawing::Point(13, 98);
+			this->CreateButton->Margin = System::Windows::Forms::Padding(4);
 			this->CreateButton->Name = L"CreateButton";
-			this->CreateButton->Size = System::Drawing::Size(121, 31);
+			this->CreateButton->Size = System::Drawing::Size(161, 38);
 			this->CreateButton->TabIndex = 0;
 			this->CreateButton->Text = L"Создать";
 			this->CreateButton->UseVisualStyleBackColor = false;
@@ -129,18 +132,20 @@ namespace CppCLRWinFormsProject {
 			this->comboBox1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->comboBox1->FormattingEnabled = true;
 			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Треугольник", L"Окружность", L"Сложная фигура" });
-			this->comboBox1->Location = System::Drawing::Point(52, 370);
+			this->comboBox1->Location = System::Drawing::Point(13, 44);
+			this->comboBox1->Margin = System::Windows::Forms::Padding(4);
 			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(121, 21);
+			this->comboBox1->Size = System::Drawing::Size(160, 24);
 			this->comboBox1->TabIndex = 1;
 			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &Form1::comboBox1_SelectedIndexChanged);
 			// 
 			// HideButton
 			// 
-			this->HideButton->BackColor = System::Drawing::SystemColors::Info;
-			this->HideButton->Location = System::Drawing::Point(329, 466);
+			this->HideButton->BackColor = System::Drawing::Color::CornflowerBlue;
+			this->HideButton->Location = System::Drawing::Point(16, 190);
+			this->HideButton->Margin = System::Windows::Forms::Padding(4);
 			this->HideButton->Name = L"HideButton";
-			this->HideButton->Size = System::Drawing::Size(120, 31);
+			this->HideButton->Size = System::Drawing::Size(160, 38);
 			this->HideButton->TabIndex = 2;
 			this->HideButton->Text = L"Скрыть";
 			this->HideButton->UseVisualStyleBackColor = false;
@@ -148,10 +153,11 @@ namespace CppCLRWinFormsProject {
 			// 
 			// ReplaceButton
 			// 
-			this->ReplaceButton->BackColor = System::Drawing::SystemColors::Info;
-			this->ReplaceButton->Location = System::Drawing::Point(477, 466);
+			this->ReplaceButton->BackColor = System::Drawing::Color::CornflowerBlue;
+			this->ReplaceButton->Location = System::Drawing::Point(16, 236);
+			this->ReplaceButton->Margin = System::Windows::Forms::Padding(4);
 			this->ReplaceButton->Name = L"ReplaceButton";
-			this->ReplaceButton->Size = System::Drawing::Size(120, 31);
+			this->ReplaceButton->Size = System::Drawing::Size(160, 38);
 			this->ReplaceButton->TabIndex = 3;
 			this->ReplaceButton->Text = L"Переместить";
 			this->ReplaceButton->UseVisualStyleBackColor = false;
@@ -159,133 +165,161 @@ namespace CppCLRWinFormsProject {
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(200, 370);
+			this->textBox1->Location = System::Drawing::Point(215, 44);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(40, 20);
+			this->textBox1->Size = System::Drawing::Size(52, 22);
 			this->textBox1->TabIndex = 4;
 			this->textBox1->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &Form1::check_input);
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(260, 370);
+			this->textBox2->Location = System::Drawing::Point(301, 44);
+			this->textBox2->Margin = System::Windows::Forms::Padding(4);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(40, 20);
+			this->textBox2->Size = System::Drawing::Size(52, 22);
 			this->textBox2->TabIndex = 5;
 			this->textBox2->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &Form1::check_input);
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(320, 370);
+			this->textBox3->Location = System::Drawing::Point(381, 44);
+			this->textBox3->Margin = System::Windows::Forms::Padding(4);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(40, 20);
+			this->textBox3->Size = System::Drawing::Size(52, 22);
 			this->textBox3->TabIndex = 6;
 			this->textBox3->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &Form1::check_input);
 			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(380, 370);
+			this->textBox4->Location = System::Drawing::Point(461, 44);
+			this->textBox4->Margin = System::Windows::Forms::Padding(4);
 			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(40, 20);
+			this->textBox4->Size = System::Drawing::Size(52, 22);
 			this->textBox4->TabIndex = 7;
 			this->textBox4->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &Form1::check_input);
 			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(440, 370);
+			this->textBox5->Location = System::Drawing::Point(541, 44);
+			this->textBox5->Margin = System::Windows::Forms::Padding(4);
 			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(40, 20);
+			this->textBox5->Size = System::Drawing::Size(52, 22);
 			this->textBox5->TabIndex = 8;
 			this->textBox5->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &Form1::check_input);
 			// 
 			// textBox6
 			// 
-			this->textBox6->Location = System::Drawing::Point(477, 529);
+			this->textBox6->Location = System::Drawing::Point(26, 296);
+			this->textBox6->Margin = System::Windows::Forms::Padding(4);
 			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(40, 20);
+			this->textBox6->Size = System::Drawing::Size(52, 22);
 			this->textBox6->TabIndex = 9;
 			this->textBox6->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &Form1::check_input);
 			// 
 			// textBox7
 			// 
-			this->textBox7->Location = System::Drawing::Point(557, 529);
+			this->textBox7->Location = System::Drawing::Point(109, 296);
+			this->textBox7->Margin = System::Windows::Forms::Padding(4);
 			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(40, 20);
+			this->textBox7->Size = System::Drawing::Size(52, 22);
 			this->textBox7->TabIndex = 10;
 			this->textBox7->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &Form1::check_input);
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(64, 354);
+			this->label1->Location = System::Drawing::Point(23, 17);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(95, 13);
+			this->label1->Size = System::Drawing::Size(124, 16);
 			this->label1->TabIndex = 11;
 			this->label1->Text = L"Выберете фигуру";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(200, 351);
+			this->label2->Location = System::Drawing::Point(225, 25);
+			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(0, 13);
+			this->label2->Size = System::Drawing::Size(0, 16);
 			this->label2->TabIndex = 12;
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(265, 351);
+			this->label3->Location = System::Drawing::Point(316, 25);
+			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(0, 13);
+			this->label3->Size = System::Drawing::Size(0, 16);
 			this->label3->TabIndex = 13;
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(325, 351);
+			this->label4->Location = System::Drawing::Point(400, 25);
+			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(0, 13);
+			this->label4->Size = System::Drawing::Size(0, 16);
 			this->label4->TabIndex = 14;
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(385, 351);
+			this->label5->Location = System::Drawing::Point(478, 25);
+			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(0, 13);
+			this->label5->Size = System::Drawing::Size(0, 16);
 			this->label5->TabIndex = 15;
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(445, 351);
+			this->label6->Location = System::Drawing::Point(558, 25);
+			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(0, 13);
+			this->label6->Size = System::Drawing::Size(0, 16);
 			this->label6->TabIndex = 16;
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(474, 513);
+			this->label7->Location = System::Drawing::Point(43, 278);
+			this->label7->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(34, 13);
+			this->label7->Size = System::Drawing::Size(15, 16);
 			this->label7->TabIndex = 17;
-			this->label7->Text = L"newX";
+			this->label7->Text = L"X";
 			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(554, 513);
+			this->label8->Location = System::Drawing::Point(131, 278);
+			this->label8->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(34, 13);
+			this->label8->Size = System::Drawing::Size(16, 16);
 			this->label8->TabIndex = 18;
-			this->label8->Text = L"newY";
+			this->label8->Text = L"Y";
+			this->label8->Click += gcnew System::EventHandler(this, &Form1::label8_Click);
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->Location = System::Drawing::Point(53, 493);
+			this->label10->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(94, 16);
+			this->label10->TabIndex = 18;
+			this->label10->Text = L"Ваши фигуры";
+			this->label10->Click += gcnew System::EventHandler(this, &Form1::label8_Click);
 			// 
 			// ClearButton
 			// 
-			this->ClearButton->BackColor = System::Drawing::SystemColors::Info;
-			this->ClearButton->Location = System::Drawing::Point(531, 333);
+			this->ClearButton->BackColor = System::Drawing::Color::CornflowerBlue;
+			this->ClearButton->Location = System::Drawing::Point(26, 629);
+			this->ClearButton->Margin = System::Windows::Forms::Padding(4);
 			this->ClearButton->Name = L"ClearButton";
-			this->ClearButton->Size = System::Drawing::Size(119, 34);
+			this->ClearButton->Size = System::Drawing::Size(161, 42);
 			this->ClearButton->TabIndex = 19;
 			this->ClearButton->Text = L"Очистить контейнер";
 			this->ClearButton->UseVisualStyleBackColor = false;
@@ -295,18 +329,20 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->comboBox2->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->comboBox2->FormattingEnabled = true;
-			this->comboBox2->Location = System::Drawing::Point(328, 439);
+			this->comboBox2->Location = System::Drawing::Point(26, 529);
+			this->comboBox2->Margin = System::Windows::Forms::Padding(4);
 			this->comboBox2->Name = L"comboBox2";
-			this->comboBox2->Size = System::Drawing::Size(121, 21);
+			this->comboBox2->Size = System::Drawing::Size(160, 24);
 			this->comboBox2->TabIndex = 20;
 			this->comboBox2->SelectedIndexChanged += gcnew System::EventHandler(this, &Form1::comboBox2_SelectedIndexChanged);
 			// 
 			// ShowButton
 			// 
-			this->ShowButton->BackColor = System::Drawing::SystemColors::Info;
-			this->ShowButton->Location = System::Drawing::Point(200, 466);
+			this->ShowButton->BackColor = System::Drawing::Color::CornflowerBlue;
+			this->ShowButton->Location = System::Drawing::Point(13, 144);
+			this->ShowButton->Margin = System::Windows::Forms::Padding(4);
 			this->ShowButton->Name = L"ShowButton";
-			this->ShowButton->Size = System::Drawing::Size(107, 31);
+			this->ShowButton->Size = System::Drawing::Size(161, 38);
 			this->ShowButton->TabIndex = 21;
 			this->ShowButton->Text = L"Показать";
 			this->ShowButton->UseVisualStyleBackColor = false;
@@ -315,17 +351,19 @@ namespace CppCLRWinFormsProject {
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(10, 398);
+			this->label9->Location = System::Drawing::Point(140, 80);
+			this->label9->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(0, 13);
+			this->label9->Size = System::Drawing::Size(0, 16);
 			this->label9->TabIndex = 22;
 			// 
 			// ShowAllButton
 			// 
-			this->ShowAllButton->BackColor = System::Drawing::SystemColors::Info;
-			this->ShowAllButton->Location = System::Drawing::Point(531, 377);
+			this->ShowAllButton->BackColor = System::Drawing::Color::CornflowerBlue;
+			this->ShowAllButton->Location = System::Drawing::Point(26, 579);
+			this->ShowAllButton->Margin = System::Windows::Forms::Padding(4);
 			this->ShowAllButton->Name = L"ShowAllButton";
-			this->ShowAllButton->Size = System::Drawing::Size(119, 34);
+			this->ShowAllButton->Size = System::Drawing::Size(161, 42);
 			this->ShowAllButton->TabIndex = 23;
 			this->ShowAllButton->Text = L"Показать все";
 			this->ShowAllButton->UseVisualStyleBackColor = false;
@@ -333,10 +371,10 @@ namespace CppCLRWinFormsProject {
 			// 
 			// Form1
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Control;
-			this->ClientSize = System::Drawing::Size(684, 561);
+			this->ClientSize = System::Drawing::Size(909, 681);
 			this->Controls->Add(this->ShowAllButton);
 			this->Controls->Add(this->label9);
 			this->Controls->Add(this->ShowButton);
@@ -357,16 +395,18 @@ namespace CppCLRWinFormsProject {
 			this->Controls->Add(this->textBox3);
 			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->label10);
 			this->Controls->Add(this->ReplaceButton);
 			this->Controls->Add(this->HideButton);
 			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->CreateButton);
-			this->MaximumSize = System::Drawing::Size(700, 600);
-			this->MinimumSize = System::Drawing::Size(700, 600);
+			this->Margin = System::Windows::Forms::Padding(4);
+			this->MaximumSize = System::Drawing::Size(927, 728);
+			this->MinimumSize = System::Drawing::Size(927, 728);
 			this->Name = L"Form1";
 			this->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Praktika_22VP2_Dankov";
+			this->Text = L"22VP1_8_TriangleCircle";
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -595,5 +635,7 @@ namespace CppCLRWinFormsProject {
 		this->ClearButton->Enabled = Figures->getsize() > 0;
 		this->ShowAllButton->Enabled = Figures->getsize() > 0;;
 	}
+private: System::Void label8_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
